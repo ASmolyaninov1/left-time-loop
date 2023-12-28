@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 149.459, 32.9412 )
+
+[sub_resource type="StreamTexture" id=2]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/platform.png-fcf04a5d9e0cf77c2a8aeb43f3541378.stex"
+
+[node name="Platform" type="StaticBody2D"]
+scale = Vector2( 1, 0.7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 9.05877 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -1.90735e-06, 0 )
+scale = Vector2( 0.332222, 0.126959 )
+texture = SubResource( 2 )
