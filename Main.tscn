@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=2]
+[ext_resource path="res://Platform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Knight.tscn" type="PackedScene" id=4]
+
+[node name="Main" type="Node"]
+script = ExtResource( 2 )
+
+[node name="StartPosition" type="Position2D" parent="."]
+position = Vector2( 240, 460 )
+
+[node name="Platform" parent="." instance=ExtResource( 3 )]
+position = Vector2( 37, 620 )
+
+[node name="Platform2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 336, 592 )
+
+[node name="Platform3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2112, 376 )
+
+[node name="Platform4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1568, 456 )
+
+[node name="Platform5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1480, 528 )
+
+[node name="Platform6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1896, 408 )
+
+[node name="Platform7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 384, 480 )
+
+[node name="Platform8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1816, 432 )
+
+[node name="Platform9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1520, 480 )
+
+[node name="Platform10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 632, 592 )
+
+[node name="Platform11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1224, 536 )
+
+[node name="Platform12" parent="." instance=ExtResource( 3 )]
+position = Vector2( 928, 592 )
+
+[node name="Platform13" parent="." instance=ExtResource( 3 )]
+position = Vector2( -79.9999, 152 )
+rotation = 1.5708
+
+[node name="Platform14" parent="." instance=ExtResource( 3 )]
+position = Vector2( -80, 440 )
+rotation = 1.5708
+
+[node name="Platform15" parent="." instance=ExtResource( 3 )]
+position = Vector2( 504, 528 )
+rotation = 1.5708
+
+[node name="Platform16" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1696, 480 )
+rotation = 1.5708
+
+[node name="Platform17" parent="." instance=ExtResource( 3 )]
+position = Vector2( 224, 600 )
+rotation = 1.5708
+
+[node name="Knight" parent="." instance=ExtResource( 4 )]
+position = Vector2( 182, 409 )
+
+[connection signal="hit" from="Knight" to="." method="_on_Knight_hit"]
