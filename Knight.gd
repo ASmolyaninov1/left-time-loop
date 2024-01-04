@@ -11,6 +11,7 @@ var max_jumps = 2
 
 func _ready():
 	hide()
+	$AnimatedSprite.play()
 
 var falling = 0
 
@@ -29,17 +30,9 @@ func _process(delta):
 	if is_on_floor():
 		jump_counter = 0
 	
-	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
-		velocity.y += jump_force
+	if jump_counter < max_jumps and Input.is_action_just_pressed("ui_accept"):
+		velocity.y = jump_force
 		jump_counter += 1
-	
-	if not is_on_floor() and Input.is_action_just_pressed("ui_accept") and jump_counter < max_jumps:
-		velocity.y += jump_force/2
-		if velocity.y > jump_force/2:
-			velocity.y += jump_force/2
-		
-		jump_counter += 1
-		print(velocity.y)
 		
 	if  velocity.y < 0 and Input.is_action_just_released("ui_accept"):
 		falling = 20
@@ -51,19 +44,16 @@ func _process(delta):
 		falling = 0
 
 	velocity = move_and_slide(velocity, Vector2.UP)
-
-	if velocity.length() > 0:
-		$AnimatedSprite.play()
-	else:
-		$AnimatedSprite.stop()
 	
-	if velocity.x != 0:
+	$AnimatedSprite.flip_h = velocity.x < 0
+	if velocity == Vector2.ZERO:
+		$AnimatedSprite.animation = "stay"
+	elif velocity.x != 0 and is_on_floor():
 		$AnimatedSprite.animation = "walk"
-		$AnimatedSprite.flip_v = false
-		# See the note below about boolean assignment.
-		$AnimatedSprite.flip_h = velocity.x < 0
-	#elif velocity.y != 0:
-		#$AnimatedSprite.animation = "up"
+	elif velocity.y < -10:
+		$AnimatedSprite.animation = "jump"
+	elif velocity.y > 10:
+		$AnimatedSprite.animation = "fall"
 
 
 func _on_Player_body_entered(_body):
