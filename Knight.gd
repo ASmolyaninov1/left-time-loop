@@ -8,6 +8,7 @@ onready var screen_size = get_viewport_rect().size
 var velocity = Vector2.ZERO
 var jump_counter = 0
 var max_jumps = 2
+var is_attack_finished = true
 
 func _ready():
 	hide()
@@ -15,18 +16,13 @@ func _ready():
 
 var falling = 0
 
-func _process(delta):
-	velocity.x = 0
-	if Input.is_action_pressed("move_right"):
-		velocity.x += speed
-	if Input.is_action_pressed("move_left"):
-		velocity.x -= speed
-	
+func _gravitation(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		if velocity.y > 2000:
 			velocity.y = 2000
-	
+
+func _jump():
 	if is_on_floor():
 		jump_counter = 0
 	
@@ -42,18 +38,37 @@ func _process(delta):
 		falling += 20
 	if falling > 50:
 		falling = 0
+		
+func _animations():
+	if velocity.x != 0:
+		$AnimatedSprite.flip_h = velocity.x < 0
+
+	if is_attack_finished:
+		if velocity == Vector2.ZERO:
+			$AnimatedSprite.animation = "stay"
+		elif velocity.x != 0 and is_on_floor():
+			$AnimatedSprite.animation = "walk"
+		elif velocity.y < -10:
+			$AnimatedSprite.animation = "jump"
+		elif velocity.y > 10:
+			$AnimatedSprite.animation = "fall"
+		
+	if Input.is_action_just_pressed('attack'):
+		$AnimatedSprite.animation = "attack"
+		is_attack_finished = false
+
+func _process(delta):
+	velocity.x = 0
+	if Input.is_action_pressed("move_right"):
+		velocity.x += speed
+	if Input.is_action_pressed("move_left"):
+		velocity.x -= speed
+	
+	_gravitation(delta)
+	_jump()
 
 	velocity = move_and_slide(velocity, Vector2.UP)
-	
-	$AnimatedSprite.flip_h = velocity.x < 0
-	if velocity == Vector2.ZERO:
-		$AnimatedSprite.animation = "stay"
-	elif velocity.x != 0 and is_on_floor():
-		$AnimatedSprite.animation = "walk"
-	elif velocity.y < -10:
-		$AnimatedSprite.animation = "jump"
-	elif velocity.y > 10:
-		$AnimatedSprite.animation = "fall"
+	_animations()
 
 
 func _on_Player_body_entered(_body):
@@ -66,3 +81,8 @@ func start(pos):
 	position = pos
 	show()
 	$CollisionShape2D.disabled = false
+
+
+func _on_AnimatedSprite_animation_finished():
+	if ($AnimatedSprite.animation == "attack"):
+		is_attack_finished = true
