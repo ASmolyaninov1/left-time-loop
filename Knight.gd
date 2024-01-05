@@ -57,6 +57,8 @@ func _animations():
 		$AnimatedSprite.animation = "attack"
 		is_attack_finished = false
 
+var push_force = 80.0
+
 func _process(delta):
 	velocity.x = 0
 	if Input.is_action_pressed("move_right"):
@@ -68,6 +70,7 @@ func _process(delta):
 	_jump()
 
 	velocity = move_and_slide(velocity, Vector2.UP)
+	
 	_animations()
 
 
