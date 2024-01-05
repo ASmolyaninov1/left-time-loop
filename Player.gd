@@ -1,10 +1,10 @@
-extends KinematicBody2D
+extends CharacterBody2D
 signal hit
 
-export var speed = 400
-export var gravity = 900
-export var jump_force = -400
-onready var screen_size = get_viewport_rect().size
+@export var speed = 400
+@export var gravity = 900
+@export var jump_force = -400
+@onready var screen_size = get_viewport_rect().size
 var velocity = Vector2.ZERO
 
 func _ready():
@@ -22,20 +22,23 @@ func _process(delta):
 	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
 		velocity.y += jump_force
 
-	velocity = move_and_slide(velocity, Vector2.UP)
+	set_velocity(velocity)
+	set_up_direction(Vector2.UP)
+	move_and_slide()
+	velocity = velocity
 
 	if velocity.length() > 0:
-		$AnimatedSprite.play()
+		$AnimatedSprite2D.play()
 	else:
-		$AnimatedSprite.stop()
+		$AnimatedSprite2D.stop()
 	
 	if velocity.x != 0:
-		$AnimatedSprite.animation = "walk"
-		$AnimatedSprite.flip_v = false
+		$AnimatedSprite2D.animation = "walk"
+		$AnimatedSprite2D.flip_v = false
 		# See the note below about boolean assignment.
-		$AnimatedSprite.flip_h = velocity.x < 0
+		$AnimatedSprite2D.flip_h = velocity.x < 0
 	elif velocity.y != 0:
-		$AnimatedSprite.animation = "up"
+		$AnimatedSprite2D.animation = "up"
 
 
 func _on_Player_body_entered(_body):

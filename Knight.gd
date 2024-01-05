@@ -1,75 +1,78 @@
-extends KinematicBody2D
+extends CharacterBody2D
 signal hit
 
-export var speed = 400
-export var gravity = 900
-export var jump_force = -400
-onready var screen_size = get_viewport_rect().size
-var velocity = Vector2.ZERO
+@export var speed = 400
+@export var gravity = 900
+@export var jump_force = -400
+@onready var screen_size = get_viewport_rect().size
+var custom_velocity = Vector2.ZERO
 var jump_counter = 0
 var max_jumps = 2
 var is_attack_finished = true
 
 func _ready():
 	hide()
-	$AnimatedSprite.play()
+	$AnimatedSprite2D.play()
 
 var falling = 0
 
 func _gravitation(delta):
 	if not is_on_floor():
-		velocity.y += gravity * delta
-		if velocity.y > 2000:
-			velocity.y = 2000
+		custom_velocity.y += gravity * delta
+		if custom_velocity.y > 2000:
+			custom_velocity.y = 2000
 
 func _jump():
 	if is_on_floor():
 		jump_counter = 0
 	
 	if jump_counter < max_jumps and Input.is_action_just_pressed("ui_accept"):
-		velocity.y = jump_force
+		custom_velocity.y = jump_force
 		jump_counter += 1
 		
-	if  velocity.y < 0 and Input.is_action_just_released("ui_accept"):
+	if  custom_velocity.y < 0 and Input.is_action_just_released("ui_accept"):
 		falling = 20
 	if falling > 0:
-		velocity.y += falling
+		custom_velocity.y += falling
 	if falling > 0:
 		falling += 20
 	if falling > 50:
 		falling = 0
 		
 func _animations():
-	if velocity.x != 0:
-		$AnimatedSprite.flip_h = velocity.x < 0
+	if custom_velocity.x != 0:
+		$AnimatedSprite2D.flip_h = custom_velocity.x < 0
 
 	if is_attack_finished:
-		if velocity == Vector2.ZERO:
-			$AnimatedSprite.animation = "stay"
-		elif velocity.x != 0 and is_on_floor():
-			$AnimatedSprite.animation = "walk"
-		elif velocity.y < -10:
-			$AnimatedSprite.animation = "jump"
-		elif velocity.y > 10:
-			$AnimatedSprite.animation = "fall"
+		if custom_velocity == Vector2.ZERO:
+			$AnimatedSprite2D.animation = "stay"
+		elif custom_velocity.x != 0 and is_on_floor():
+			$AnimatedSprite2D.animation = "walk"
+		elif custom_velocity.y < -10:
+			$AnimatedSprite2D.animation = "jump"
+		elif custom_velocity.y > 10:
+			$AnimatedSprite2D.animation = "fall"
 		
 	if Input.is_action_just_pressed('attack'):
-		$AnimatedSprite.animation = "attack"
+		$AnimatedSprite2D.animation = "attack"
 		is_attack_finished = false
 
 var push_force = 80.0
 
 func _process(delta):
-	velocity.x = 0
+	custom_velocity.x = 0
 	if Input.is_action_pressed("move_right"):
-		velocity.x += speed
+		custom_velocity.x += speed
 	if Input.is_action_pressed("move_left"):
-		velocity.x -= speed
+		custom_velocity.x -= speed
 	
 	_gravitation(delta)
 	_jump()
 
-	velocity = move_and_slide(velocity, Vector2.UP)
+	set_velocity(custom_velocity)
+	set_up_direction(Vector2.UP)
+	move_and_slide()
+	custom_velocity = velocity
 	
 	_animations()
 
@@ -85,7 +88,6 @@ func start(pos):
 	show()
 	$CollisionShape2D.disabled = false
 
-
-func _on_AnimatedSprite_animation_finished():
-	if ($AnimatedSprite.animation == "attack"):
+func _on_animated_sprite_2d_animation_looped():
+	if ($AnimatedSprite2D.animation == "attack"):
 		is_attack_finished = true
