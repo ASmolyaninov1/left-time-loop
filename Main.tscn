@@ -27,6 +27,10 @@ position = Vector2(1122, 502)
 [node name="Platform5" parent="." instance=ExtResource("3")]
 position = Vector2(1446, 502)
 
+[node name="Platform7" parent="." instance=ExtResource("3")]
+position = Vector2(1446, 309)
+rotation = 1.57079
+
 [node name="Platform6" parent="." instance=ExtResource("3")]
 position = Vector2(1771, 502)
 
@@ -37,6 +41,5 @@ position = Vector2(312, 375)
 position = Vector2(435, 386)
 
 [node name="Background" parent="." instance=ExtResource("5")]
+visible = false
 position = Vector2(572, 327)
-
-[connection signal="hit" from="Knight" to="." method="_on_Knight_hit"]

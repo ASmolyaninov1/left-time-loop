@@ -1,2 +1,6 @@
+CollisionShape2D
+Sprite2D
+AnimationPlayer
+Area2D
 Parallax
 RayCast2D

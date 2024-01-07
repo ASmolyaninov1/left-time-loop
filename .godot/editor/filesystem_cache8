@@ -1,19 +1,19 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1704484545
-Background.tscn::PackedScene::3650218946212998517::1704484533::0::1::::<><>::uid://d1vd88vycxhbd::::res://art/background/1.png<>uid://gpd2v46duus1::::res://art/background/6.png<>uid://c7w0il2hs61hu::::res://art/background/7.png<>uid://d02ele0erdfna::::res://art/background/10.png<>uid://0dyb0bnyify2::::res://art/background/2.png<>uid://caicy84g7syk2::::res://art/background/5.png<>uid://dnnjl828lmfae::::res://art/background/8.png<>uid://dp5gtetfmhbl4::::res://art/background/3.png
-Box.tscn::PackedScene::623689043120782916::1704484260::0::1::::<><>::uid://bi0hwyvtpxtl8::::res://art/tileset/TX Village Props.png
-default_env.tres::Environment::6667071295428954361::1704484533::0::1::::<><>::
+::res://::1704612933
+Background.tscn::PackedScene::3650218946212998517::1704485612::0::1::::<><>::uid://d1vd88vycxhbd::::res://art/background/1.png<>uid://gpd2v46duus1::::res://art/background/6.png<>uid://c7w0il2hs61hu::::res://art/background/7.png<>uid://d02ele0erdfna::::res://art/background/10.png<>uid://0dyb0bnyify2::::res://art/background/2.png<>res://addons/nklbdev.parallax/Parallax.gd<>uid://caicy84g7syk2::::res://art/background/5.png<>uid://dnnjl828lmfae::::res://art/background/8.png<>uid://dp5gtetfmhbl4::::res://art/background/3.png
+Box.tscn::PackedScene::623689043120782916::1704485612::0::1::::<><>::uid://bi0hwyvtpxtl8::::res://art/tileset/TX Village Props.png
+default_env.tres::Environment::6667071295428954361::1704566445::0::1::::<><>::
 HUD.gd::GDScript::-1::1704469289::0::1::::<>CanvasLayer<>::
 HUD.tscn::PackedScene::-1::1704469289::0::1::::<><>::res://fonts/new_dynamicfont.tres<>res://HUD.gd
 icon.png::CompressedTexture2D::3400670510682052147::1704375445::1704469305::1::::<><>::
-Knight.gd::GDScript::-1::1704470390::0::1::::<>CharacterBody2D<>::
-Knight.tscn::PackedScene::3100424946954524734::1704484260::0::1::::<><>::uid://c5i0bogp0wqph::::res://art/knight_sprites/_JumpFallInbetween.png<>res://Knight.gd<>uid://b08e45kcdjbi1::::res://art/knight_sprites/_Run.png<>uid://fgurme4fssee::::res://art/knight_sprites/_Jump.png<>uid://bu7tyqq4uo4gc::::res://art/knight_sprites/_Fall.png<>uid://0ce18sy2b3ek::::res://art/knight_sprites/_Idle.png<>uid://dbfvforrku6bq::::res://art/knight_sprites/_AttackNoMovement.png
+Knight.gd::GDScript::-1::1704554418::0::1::::<>CharacterBody2D<>::
+Knight.tscn::PackedScene::3100424946954524734::1704566445::0::1::::<><>::uid://c5i0bogp0wqph::::res://art/knight_sprites/_JumpFallInbetween.png<>res://Knight.gd<>uid://b08e45kcdjbi1::::res://art/knight_sprites/_Run.png<>uid://fgurme4fssee::::res://art/knight_sprites/_Jump.png<>uid://bu7tyqq4uo4gc::::res://art/knight_sprites/_Fall.png<>uid://0ce18sy2b3ek::::res://art/knight_sprites/_Idle.png<>uid://dbfvforrku6bq::::res://art/knight_sprites/_AttackNoMovement.png
 Main.gd::GDScript::-1::1704469289::0::1::::<>Node<>::
-Main.tscn::PackedScene::7797783709003064619::1704484260::0::1::::<><>::uid://i5ecj62hqxn5::::res://Box.tscn<>res://Main.gd<>uid://cup77xcww0rwc::::res://Platform.tscn<>uid://bkf4stb861jo5::::res://Knight.tscn<>uid://bsagtqc8x5yav::::res://Background.tscn
+Main.tscn::PackedScene::7797783709003064619::1704566445::0::1::::<><>::uid://i5ecj62hqxn5::::res://Box.tscn<>res://Main.gd<>uid://cup77xcww0rwc::::res://Platform.tscn<>uid://bkf4stb861jo5::::res://Knight.tscn<>uid://bsagtqc8x5yav::::res://Background.tscn
 MessageTimer.gd::GDScript::-1::1704469289::0::1::::<>Timer<>::
 Mob.gd::GDScript::-1::1704469289::0::1::::<>RigidBody2D<>::
 Mob.tscn::PackedScene::-1::1704469289::0::1::::<><>::res://art/enemySwimming_2.png<>res://art/enemyFlyingAlt_1.png<>res://art/enemyFlyingAlt_2.png<>res://art/enemySwimming_1.png<>res://art/enemyWalking_1.png<>res://art/enemyWalking_2.png<>res://Mob.gd
-Platform.tscn::PackedScene::6209585207787873818::1704484260::0::1::::<><>::uid://bofnvpx8g0wig::::res://art/tileset/TX Tileset Ground.png
+Platform.tscn::PackedScene::6209585207787873818::1704485612::0::1::::<><>::uid://bofnvpx8g0wig::::res://art/tileset/TX Tileset Ground.png
 Player.gd::GDScript::-1::1704469289::0::1::::<>CharacterBody2D<>::
 Player.tscn::PackedScene::-1::1704469289::0::1::::<><>::res://art/playerGrey_up1.png<>res://art/playerGrey_up2.png<>res://art/playerGrey_walk1.png<>res://art/playerGrey_walk2.png<>res://Player.gd
 README.md::TextFile::-1::1704484498::0::1::::<><>::
@@ -49,7 +49,7 @@ _JumpFallInbetween.png::CompressedTexture2D::8337808295301977537::1704375445::17
 7.png::CompressedTexture2D::7065833505372875810::1677761356::1704469305::1::::<><>::
 8.png::CompressedTexture2D::8099121802339173384::1677761408::1704469305::1::::<><>::
 10.png::CompressedTexture2D::8969984102011840950::1677764194::1704469305::1::::<><>::
-::res://art/knight_sprites/::1704469305
+::res://art/knight_sprites/::1704556716
 _Attack2.png::CompressedTexture2D::5648564039095881953::1704375445::1704469305::1::::<><>::
 _Attack2NoMovement.png::CompressedTexture2D::461740620591226329::1704375445::1704469305::1::::<><>::
 _Attack.png::CompressedTexture2D::6262721628971785408::1704375445::1704469305::1::::<><>::
