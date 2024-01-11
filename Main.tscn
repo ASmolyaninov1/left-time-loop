@@ -41,5 +41,4 @@ position = Vector2(312, 375)
 position = Vector2(435, 386)
 
 [node name="Background" parent="." instance=ExtResource("5")]
-visible = false
 position = Vector2(572, 327)

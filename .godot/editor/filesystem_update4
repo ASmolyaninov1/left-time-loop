@@ -1,4 +1,6 @@
 res://default_env.tres
 res://Main.tscn
 res://Knight.tscn
+res://Box.tscn
+res://Box.gd
 res://Knight.gd

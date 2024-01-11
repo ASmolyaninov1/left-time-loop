@@ -1,15 +1,15 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1704612933
+::res://::1704963463
 Background.tscn::PackedScene::3650218946212998517::1704485612::0::1::::<><>::uid://d1vd88vycxhbd::::res://art/background/1.png<>uid://gpd2v46duus1::::res://art/background/6.png<>uid://c7w0il2hs61hu::::res://art/background/7.png<>uid://d02ele0erdfna::::res://art/background/10.png<>uid://0dyb0bnyify2::::res://art/background/2.png<>res://addons/nklbdev.parallax/Parallax.gd<>uid://caicy84g7syk2::::res://art/background/5.png<>uid://dnnjl828lmfae::::res://art/background/8.png<>uid://dp5gtetfmhbl4::::res://art/background/3.png
 Box.tscn::PackedScene::623689043120782916::1704485612::0::1::::<><>::uid://bi0hwyvtpxtl8::::res://art/tileset/TX Village Props.png
-default_env.tres::Environment::6667071295428954361::1704566445::0::1::::<><>::
+default_env.tres::Environment::6667071295428954361::1704963448::0::1::::<><>::
 HUD.gd::GDScript::-1::1704469289::0::1::::<>CanvasLayer<>::
 HUD.tscn::PackedScene::-1::1704469289::0::1::::<><>::res://fonts/new_dynamicfont.tres<>res://HUD.gd
 icon.png::CompressedTexture2D::3400670510682052147::1704375445::1704469305::1::::<><>::
-Knight.gd::GDScript::-1::1704554418::0::1::::<>CharacterBody2D<>::
-Knight.tscn::PackedScene::3100424946954524734::1704566445::0::1::::<><>::uid://c5i0bogp0wqph::::res://art/knight_sprites/_JumpFallInbetween.png<>res://Knight.gd<>uid://b08e45kcdjbi1::::res://art/knight_sprites/_Run.png<>uid://fgurme4fssee::::res://art/knight_sprites/_Jump.png<>uid://bu7tyqq4uo4gc::::res://art/knight_sprites/_Fall.png<>uid://0ce18sy2b3ek::::res://art/knight_sprites/_Idle.png<>uid://dbfvforrku6bq::::res://art/knight_sprites/_AttackNoMovement.png
+Knight.gd::GDScript::-1::1704613294::0::1::::<>RefCounted<>::
+Knight.tscn::PackedScene::3100424946954524734::1704963448::0::1::::<><>::uid://b08e45kcdjbi1::::res://art/knight_sprites/_Run.png<>uid://fgurme4fssee::::res://art/knight_sprites/_Jump.png<>uid://bu7tyqq4uo4gc::::res://art/knight_sprites/_Fall.png<>uid://0ce18sy2b3ek::::res://art/knight_sprites/_Idle.png<>uid://cvhyd0ov1l8mm::::res://art/knight_sprites/_Attack.png
 Main.gd::GDScript::-1::1704469289::0::1::::<>Node<>::
-Main.tscn::PackedScene::7797783709003064619::1704566445::0::1::::<><>::uid://i5ecj62hqxn5::::res://Box.tscn<>res://Main.gd<>uid://cup77xcww0rwc::::res://Platform.tscn<>uid://bkf4stb861jo5::::res://Knight.tscn<>uid://bsagtqc8x5yav::::res://Background.tscn
+Main.tscn::PackedScene::7797783709003064619::1704961334::0::1::::<><>::uid://i5ecj62hqxn5::::res://Box.tscn<>res://Main.gd<>uid://cup77xcww0rwc::::res://Platform.tscn<>uid://bkf4stb861jo5::::res://Knight.tscn<>uid://bsagtqc8x5yav::::res://Background.tscn
 MessageTimer.gd::GDScript::-1::1704469289::0::1::::<>Timer<>::
 Mob.gd::GDScript::-1::1704469289::0::1::::<>RigidBody2D<>::
 Mob.tscn::PackedScene::-1::1704469289::0::1::::<><>::res://art/enemySwimming_2.png<>res://art/enemyFlyingAlt_1.png<>res://art/enemyFlyingAlt_2.png<>res://art/enemySwimming_1.png<>res://art/enemyWalking_1.png<>res://art/enemyWalking_2.png<>res://Mob.gd
